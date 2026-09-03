@@ -8,22 +8,22 @@ class KodadeCli < Formula
   on_macos do
     on_arm do
       url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "88d52fcc54ea45f638071bdeeeee37463591a48fe3ef6ca698b1a2ba2f4b19a8"
+      sha256 "cf4adaae2abf7e317671c27790d6a20a00663b7bc45d4f88444b0bc48478b155"
     end
     on_intel do
       url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "387a607017a330a66167e75bea194002a4c1843c23565f45935474fdf603684d"
+      sha256 "6b80e4ba65c1a46175b295be62f6e52209b04cad476726686996f030512bff85"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a4109b1f04ad70d3087e36354a2bce8ff3fef85b97d7bb529eab2c265045e2d8"
+      sha256 "95daee0ce4eca2182c948cb2d5d7b28e458c4c5f9ac9d6ec0d0ca7e27fb32038"
     end
     on_intel do
       url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9f2f41ee09f599d01cab83fe9b457426c440a94660e2ce46963138213688931d"
+      sha256 "d79355a0d3be47fdd2a84d2bcb065fafac45eba5f702885beb0113a072c91d4c"
     end
   end
 
