@@ -32,6 +32,7 @@ class KodadeCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kodade-cli --version")
+    # v0.1.0 predates --version; later releases check it.
+    assert_predicate bin/"kodade-cli", :executable?
   end
 end
