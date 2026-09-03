@@ -2,37 +2,37 @@
 class KodadeCli < Formula
   desc "Terminal workspace for agent CLIs: workspaces, tabs, panes, agent-state awareness"
   homepage "https://github.com/Kodade/kodade-cli"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/Kodade/kodade-cli/releases/download/v0.1.0/kodade-cli-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "bf3bef05db6fa89b19e21e311fd51639ff1d2d876990b6cf26ded5103033c784"
+      url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "88d52fcc54ea45f638071bdeeeee37463591a48fe3ef6ca698b1a2ba2f4b19a8"
     end
     on_intel do
-      url "https://github.com/Kodade/kodade-cli/releases/download/v0.1.0/kodade-cli-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "0f630a4069eea7c90ebfb05800636b57d31f2a5552062c494f456b71fc07260a"
+      url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "387a607017a330a66167e75bea194002a4c1843c23565f45935474fdf603684d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Kodade/kodade-cli/releases/download/v0.1.0/kodade-cli-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b74587ada0342e693dc73bc34562ad0bac5e066f7b02bb3273c9c081c87d3db8"
+      url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a4109b1f04ad70d3087e36354a2bce8ff3fef85b97d7bb529eab2c265045e2d8"
     end
     on_intel do
-      url "https://github.com/Kodade/kodade-cli/releases/download/v0.1.0/kodade-cli-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "04808f90b27f40b53d9aef134221f50d5db8eab364c79b752cd5c7dc43018adc"
+      url "https://github.com/Kodade/kodade-cli/releases/download/v0.2.0/kodade-cli-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9f2f41ee09f599d01cab83fe9b457426c440a94660e2ce46963138213688931d"
     end
   end
 
   def install
     bin.install "kodade-cli"
+    generate_completions_from_executable(bin/"kodade-cli", "completion")
   end
 
   test do
-    # v0.1.0 predates --version; later releases check it.
-    assert_predicate bin/"kodade-cli", :executable?
+    assert_match version.to_s, shell_output("#{bin}/kodade-cli --version")
   end
 end
